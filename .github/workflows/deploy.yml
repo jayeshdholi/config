@@ -1,0 +1,22 @@
+name: GitOps HTML Deploy
+
+on:
+  push:
+    paths:
+      - 'config/index.html'
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Simulate Deployment
+        run: |
+          echo "📦 Deploying HTML file..."
+          cat config/index.html
+          echo "✅ Deployment complete!"
