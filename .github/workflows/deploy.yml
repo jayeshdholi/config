@@ -8,6 +8,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Say Hello
-        run: echo "Hello from GitHub Actions!"
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create output directory and file
+        run: |
+          mkdir -p output
+          echo "This file was created by GitHub Actions on $(date)" > output/result.txt
+          cat output/result.txt
