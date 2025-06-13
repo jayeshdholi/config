@@ -1,22 +1,13 @@
-name: GitOps HTML Deploy
+name: Test Action
 
 on:
   push:
-    paths:
-      - 'config/index.html'
     branches:
       - main
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Simulate Deployment
-        run: |
-          echo "📦 Deploying HTML file..."
-          cat config/index.html
-          echo "✅ Deployment complete!"
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
